@@ -3,96 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتب إنجاز - أبو ناصر للخدمات العامة</title>
+    <title>مكتب إنجاز - أبو ناصر للخدمات والتعقيب</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
-        body { font-family: 'Tajawal', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; }
         .hero-section {
-            background: linear-gradient(rgba(0, 50, 0, 0.7), rgba(0, 50, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1589750615520-21309859f77d?auto=format&fit=crop&q=80&w=1000'); /* صورة تعبيرية للمال والعملات */
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 51, 0, 0.9), rgba(0, 51, 0, 0.9)), url('https://www.spa.gov.sa/viewimg.php?id=2145300');
+            background-size: cover; background-position: center;
         }
-        .gold-text { color: #D4AF37; }
-        .gold-bg { background-color: #D4AF37; }
-        .card-hover:hover { transform: translateY(-5px); transition: 0.3s; }
+        .service-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid #d4af37;
+        }
+        .service-card:hover { transform: translateY(-10px); shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <header class="bg-[#004d00] text-white p-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold flex items-center gap-2">
-                <i class="fas fa-check-circle gold-text"></i>
-                مكتب إنجاز - أبو ناصر
-            </h1>
-            <a href="tel:966548694713" class="text-sm border border-white px-3 py-1 rounded">اتصل الآن</a>
+    <div class="bg-[#003300] text-white py-2 px-6 flex justify-between items-center text-sm">
+        <span>📍 نخدم جميع مناطق المملكة</span>
+        <a href="tel:966548694713" class="font-bold flex items-center gap-2">
+            <i class="fas fa-phone-alt text-yellow-500"></i> 966548694713
+        </a>
+    </div>
+
+    <header class="hero-section py-20 px-6 text-center text-white border-b-8 border-yellow-600">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-yellow-500 italic">🇸🇦 مكتب إنجاز للخدمات والتعقيب 🇸🇦</h1>
+            <p class="text-2xl md:text-3xl font-bold mb-8">بإدارة أبو ناصر | ثقة وإنجاز يفوق التوقعات</p>
+            <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md mb-10 text-lg leading-relaxed border border-white/20">
+                في ظل التحول الرقمي السريع الذي تشهده المملكة، أصبحت المعاملات تتطلب دقة عالية وإلماماً بالأنظمة المحدثة عبر منصات قوى، أبشر، ومساند. هنا يأتي دورنا في <strong class="text-yellow-400 font-black text-xl">مكتب أبو ناصر</strong>، لنكون الجسر الذي يربطكم بالإنجاز السريع والمضمون.
+            </div>
+            <div class="bg-yellow-600 text-white py-3 px-8 rounded-full font-black text-xl mb-8 inline-block shadow-2xl animate-pulse">
+                🛑 الدفع بعد الإنجاز لضمان حقوقكم 🛑
+            </div>
         </div>
     </header>
 
-    <section class="hero-section h-96 flex items-center justify-center text-center text-white px-4">
-        <div>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">مكتب إنجاز للخَدَمَات والتعقيب</h2>
-            <p class="text-lg md:text-xl gold-text font-semibold mb-6">سرعة في الإنجاز .. دقة في المواعيد</p>
-            <a href="https://wa.me/966548694713" class="gold-bg text-[#004d00] px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-xl">
-                إنجاز المعاملة الآن <i class="fab fa-whatsapp"></i>
+    <section class="bg-white py-12 px-6 shadow-md border-b">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-black text-[#003300] mb-4 text-decoration-underline underline decoration-yellow-500">هل لديك معاملة صعبة؟</h2>
+            <p class="text-xl mb-6 font-bold text-gray-600">لا تشيل هم.. أبو ناصر ينجزها لك</p>
+            <a href="https://wa.me/966548694713" class="bg-[#25D366] text-white px-10 py-5 rounded-2xl font-black text-2xl shadow-xl hover:scale-105 transition-all block md:inline-block">
+                تواصل واتساب الآن 📱
             </a>
+            <p class="mt-4 text-gray-500 font-bold">رقم التواصل: 966548694713</p>
         </div>
     </section>
 
-    <section class="container mx-auto py-12 px-4">
-        <h3 class="text-2xl font-bold text-center mb-10 text-[#004d00] border-b-2 border-yellow-500 inline-block mx-auto">خدماتنا</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-md card-hover border-r-4 border-yellow-500">
-                <i class="fas fa-passport text-3xl text-green-700 mb-4"></i>
-                <h4 class="font-bold text-xl mb-2">الجوازات</h4>
-                <p class="text-gray-600">تجديد، إضافة، وإصدار كافة المعاملات المتعلقة بالجوازات.</p>
+    <section class="container mx-auto py-16 px-6">
+        <h2 class="text-4xl font-black text-center text-[#003300] mb-12 italic">خدماتنا المتميزة</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3">استخراج تأشيرات مهنية فردية</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">استخراج سريع لتأشيرات المكتفي عبر مساند وقوى مع ضمان القبول.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md card-hover border-r-4 border-yellow-500">
-                <i class="fas fa-building text-3xl text-green-700 mb-4"></i>
-                <h4 class="font-bold text-xl mb-2">مكتب العمل</h4>
-                <p class="text-gray-600">نقل كفالة، تعديل مهنة، وفتح ملفات المنشآت.</p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3 text-red-600">إلغاء بلاغ الهروب</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">إلغاء بلاغات التغيب عن العمل بالطرق النظامية وتصحيح وضع العامل.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md card-hover border-r-4 border-yellow-500">
-                <i class="fas fa-car text-3xl text-green-700 mb-4"></i>
-                <h4 class="font-bold text-xl mb-2">المرور</h4>
-                <p class="text-gray-600">تجديد استمارات، نقل ملكية، وإسقاط لوحات.</p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3 text-blue-700">خروج نهائي (إقامة منتهية)</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">إصدار الخروج النهائي حتى لو كانت الإقامة منتهية وبدون غرامات.</p>
             </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3">نقل كفالة مهني وفردي</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">نقل الموظفين والعمالة والمنزلية عبر قوى وأبشر بسلاسة تامة.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3">تخفيض المقابل المالي</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">حلول نظامية لتقليل مبالغ المقابل المالي المتراكمة على المنشآت.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3">تصفير الضرائب والزكاة</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">تقديم الإقرارات وتصفير المبالغ عبر هيئة الزكاة والضريبة والجمارك.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3">تصفير غرامات الضبط</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">إسقاط غرامات التأخير والمخالفات الميدانية عبر الاعتراضات النظامية.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card border-gold-500">
+                <h3 class="font-black text-xl text-[#003300] mb-3">تعديل المهن</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">تعديل المهن للفردي والمهني لتطابق الواقع الوظيفي ونظام العمل.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg service-card">
+                <h3 class="font-black text-xl text-[#003300] mb-3">تخفيض مخالفات العمل</h3>
+                <p class="text-gray-600 italic font-bold text-sm leading-relaxed">الاعتراض على مخالفات وزارة الموارد البشرية وتخفيض قيمتها.</p>
+            </div>
+
         </div>
     </section>
 
-    <section class="bg-green-50 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold mb-8">لماذا تختار مكتب إنجاز؟</h3>
-            <div class="flex flex-wrap justify-center gap-10">
-                <div class="max-w-xs">
-                    <i class="fas fa-bolt text-yellow-600 text-4xl mb-3"></i>
-                    <h5 class="font-bold">سرعة خارقة</h5>
-                    <p>ننجز معاملتك في وقت قياسي.</p>
-                </div>
-                <div class="max-w-xs">
-                    <i class="fas fa-shield-alt text-yellow-600 text-4xl mb-3"></i>
-                    <h5 class="font-bold">أمانة وثقة</h5>
-                    <p>نتعامل مع معاملاتكم بكل سرية واحترافية.</p>
-                </div>
-            </div>
-        </div>
+    <section class="bg-gray-100 py-12 px-6 text-center italic font-bold text-gray-700 border-y border-gray-200">
+        <p class="text-2xl mb-4">"تعامل احترافي وإنجاز في وقت قياسي، أنصح الجميع بمكتب أبو ناصر."</p>
+        <p class="text-yellow-600">- أحد العملاء</p>
     </section>
 
-    <footer class="bg-[#003300] text-white py-10 px-4 text-center">
-        <p class="mb-4">للتواصل المباشر مع أبو ناصر</p>
-        <div class="flex justify-center gap-4 mb-6">
-            <a href="https://wa.me/966548694713" class="bg-green-600 p-3 rounded-full hover:bg-green-500"><i class="fab fa-whatsapp text-2xl"></i></a>
-            <a href="tel:966548694713" class="bg-blue-600 p-3 rounded-full hover:bg-blue-500"><i class="fas fa-phone text-2xl"></i></a>
+    <footer class="bg-[#003300] text-white py-12 px-6 text-center border-t-4 border-yellow-500">
+        <div class="flex flex-wrap justify-center gap-6 mb-8 font-black text-yellow-500">
+            <span>الرئيسية</span> | <span>خدماتنا</span> | <span>تواصل معنا</span>
         </div>
-        <hr class="border-gray-700 mb-4">
-        <p class="text-sm text-gray-400">جميع الحقوق محفوظة © 2026 | مكتب إنجاز أبو ناصر</p>
+        <p class="text-lg mb-4">نخدمكم في كافة أنحاء المملكة العربية السعودية 🇸🇦</p>
+        <p class="text-xs opacity-50 italic">جميع الحقوق محفوظة © 2026 | مكتب إنجاز أبو ناصر</p>
     </footer>
 
-    <a href="https://wa.me/966548694713" class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 z-50">
-        <i class="fab fa-whatsapp text-3xl"></i>
+    <a href="https://wa.me/966548694713" class="fixed bottom-6 left-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl z-50 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
 </body>

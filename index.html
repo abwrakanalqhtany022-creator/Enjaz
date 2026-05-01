@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتب أبو شجاع للخدمات العامة والتعقيب</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --main-color: #0d5d36; /* اللون الأخضر الرسمي */
-            --accent-color: #c5a059; /* اللون الذهبي */
-            --text-dark: #333;
+            --primary-green: #115c32; /* اللون الأخضر الغامق الخاص بموقع إنجاز */
+            --accent-green: #1aa160; /* اللون الأخضر الفاتح للأزرار والتمييز */
+            --light-bg: #f3f4f6; /* خلفية رمادية فاتحة جداً للبطاقات */
             --white: #ffffff;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
         }
 
         * {
@@ -23,215 +25,280 @@
         }
 
         body {
-            background-color: #f4f4f4;
+            background-color: var(--white);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* الهيدر */
-        header {
-            background-color: var(--white);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
+        /* شريط الإشعارات العلوي */
+        .top-bar {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 0.9rem;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
         }
+        .top-bar i { margin-right: 5px; color: #a3e635; }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--main-color);
-        }
-
-        /* واجهة الموقع (Hero Section) */
+        /* الهيرو سيكشن (الواجهة الرئيسية) */
         .hero {
-            background: linear-gradient(rgba(13, 93, 54, 0.8), rgba(13, 93, 54, 0.8)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(rgba(17, 92, 50, 0.9), rgba(17, 92, 50, 0.9)), 
+                        url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            padding: 160px 20px 100px;
             text-align: center;
             color: var(--white);
-            padding: 20px;
         }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin-bottom: 30px; }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        /* قسم الخدمات */
-        .section-title {
-            text-align: center;
-            margin: 50px 0;
-            color: var(--main-color);
-        }
-
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 0 5%;
-            margin-bottom: 50px;
-        }
-
-        .service-card {
+        /* نموذج التواصل المرتفع (مثل موقع إنجاز) */
+        .contact-card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            border-top: 5px solid var(--accent-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: -60px auto 50px; /* القيمة السالبة ترفعه فوق الهيرو */
+            position: relative;
+            z-index: 10;
+        }
+        .contact-card h2 { color: var(--primary-green); font-size: 1.4rem; margin-bottom: 20px; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: right;
+            background-color: #f9fafb;
+        }
+        .submit-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: 0.3s;
         }
+        .submit-btn:hover { background-color: var(--accent-green); }
 
-        .service-card:hover { transform: translateY(-10px); }
-        .service-card i { color: var(--main-color); font-size: 2rem; margin-bottom: 15px; }
-        .service-card h3 { margin-bottom: 10px; color: var(--main-color); }
-        .service-card ul { list-style: none; padding-right: 0; }
-        .service-card li { margin-bottom: 8px; font-size: 0.95rem; position: relative; padding-right: 20px; }
-        .service-card li::before { content: "✓"; position: absolute; right: 0; color: var(--accent-color); font-weight: bold; }
+        /* قسم الخدمات (البطاقات الرمادية) */
+        .services { padding: 50px 20px; background-color: #fcfcfc; }
+        .services-header { text-align: center; margin-bottom: 40px; }
+        .services-header h2 { color: var(--primary-green); font-size: 1.8rem; }
 
-        /* التنبيهات */
-        .alert-box {
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            color: #856404;
-            padding: 20px;
-            margin: 20px 5%;
-            border-radius: 10px;
-            text-align: center;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+        .service-card {
+            background: var(--light-bg); /* لون الخلفية الرمادي الفاتح */
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .service-card i { color: var(--primary-green); font-size: 2.5rem; margin-bottom: 20px; }
+        .service-card h3 { color: var(--text-dark); font-size: 1.2rem; margin-bottom: 15px; }
+        .service-card ul { list-style: none; padding-right: 0; text-align: right; font-size: 0.95rem; color: var(--text-muted); }
+        .service-card li { margin-bottom: 8px; position: relative; padding-right: 20px; }
+        .service-card li::before { content: "✓"; position: absolute; right: 0; color: var(--accent-green); font-weight: bold; }
 
-        /* الفوتر */
-        footer {
-            background-color: var(--main-color);
+        /* بنر الدفع بعد الإنجاز */
+        .payment-banner {
+            background-color: var(--primary-green);
             color: var(--white);
             text-align: center;
             padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 8px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .payment-banner h2 { font-size: 1.6rem; margin-bottom: 10px; }
+        .payment-banner p { color: #a3e635; font-weight: bold; }
+
+        /* أيقونة الواتساب العائمة (بالضبط مثل موقع إنجاز) */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* تظهر على اليسار */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* زر العودة للأعلى (اختياري، يظهر في إنجاز) */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 4px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 1000;
         }
 
-        .contact-info { margin-top: 20px; }
-        .contact-info a { color: var(--accent-color); text-decoration: none; font-weight: bold; margin: 0 10px; }
+        /* الفوتر (الجزء الأخضر الغامق في الأسفل) */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .footer-logo { font-size: 1.4rem; color: var(--white); font-weight: 700; margin-bottom: 20px; }
+        .footer-links { margin-bottom: 20px; font-size: 0.9rem; }
+        .footer-links a { color: var(--white); text-decoration: none; margin: 0 10px; opacity: 0.8; }
+        .footer-links a:hover { opacity: 1; }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .service-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">مكتب أبو شجاع</div>
-        <div>
-            <a href="https://wa.me/966532766744" class="btn-whatsapp" style="padding: 10px 20px; font-size: 0.9rem;">تواصل الآن</a>
-        </div>
-    </header>
+    <div class="top-bar">
+        <span><i class="fas fa-map-marker-alt"></i> نخدمكم أينما كنتم داخل المملكة</span>
+    </div>
 
     <section class="hero">
         <h1>مكتب أبو شجاع للخدمات العامة</h1>
-        <p>دقة في التنفيذ.. وسرعة في الإنجاز. نخدمكم أينما كنتم في جميع أنحاء المملكة.</p>
-        <a href="https://wa.me/966532766744" class="btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> تواصل معنا عبر واتساب
-        </a>
+        <p>دقة في التنفيذ.. وسرعة في الإنجاز. ننجز معاملتك فورياً وباحترافية.</p>
     </section>
 
-    <div class="alert-box">
-        <strong>تنبيه هام:</strong> لا نخدم الحالات التي لديها إيقاف خدمات. نرجو التأكد قبل الإرسال.
+    <div class="contact-card">
+        <h2>تواصل معنا الآن</h2>
+        <form action="https://wa.me/966532766744" method="get" target="_blank">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="الاسم الكريم" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="رقم الجوال" required>
+            </div>
+            <div class="form-group">
+                <select name="service">
+                    <option value="" disabled selected>نوع الخدمة المطلوبة</option>
+                    <option value="تأشيرات فردية">تأشيرات فردية</option>
+                    <option value="نقل كفالة">نقل كفالة</option>
+                    <option value="إقامات وزيارات">إقامات وزيارات</option>
+                    <option value="خدمات شركات">خدمات شركات</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="نص الاستفسار" rows="3"></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> تواصل عبر واتساب</button>
+        </form>
     </div>
 
-    <h2 class="section-title">خدماتنا المتميزة</h2>
-
-    <div class="services-container">
-        <div class="service-card">
-            <i class="fas fa-building"></i>
-            <h3>خدمات الشركات والمستثمرين</h3>
-            <ul>
-                <li>تنزيل إعفاءات فورية</li>
-                <li>متاح للسعوديين والمقيمين</li>
-                <li>يشترط نطاق أخضر</li>
-                <li>عمالة أقل من 8</li>
-            </ul>
+    <section class="services">
+        <div class="services-header">
+            <h2>حلولنا المتكاملة لإنجاز معاملاتكم</h2>
         </div>
 
-        <div class="service-card">
-            <i class="fas fa-passport"></i>
-            <h3>تحديث معلومات الجوازات</h3>
-            <ul>
-                <li>تحديث معلومات (سوري، أفغاني، أفريقي، فلسطيني)</li>
-                <li>تعديل رقم وتاريخ الجواز</li>
-                <li>معلومات عليه نهائي</li>
-                <li>معلومات خارج المملكة</li>
-            </ul>
-        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-building"></i>
+                <h3>خدمات الشركات والمستثمرين</h3>
+                <ul>
+                    <li>تنزيل إعفاءات فورية (للسعوديين والمقيمين)</li>
+                    <li>عمالة أقل من 8 لضمان النطاق الأخضر</li>
+                    <li>صلاحية القرض للتجديد</li>
+                    <li>تمديد صلاحيات 3 شهور لجميع الجنسيات</li>
+                </ul>
+            </div>
 
-        <div class="service-card">
-            <i class="fas fa-user-shield"></i>
-            <h3>خدمات الإقامة والزيارة</h3>
-            <ul>
-                <li>طباعة إقامات وجميع أنواع البرنت</li>
-                <li>تمديد زيارة يمني برقم طلب</li>
-                <li>تصديق زيارات (مكة، نجران، المجمعة)</li>
-                <li>تمديد زيارات سارية ومستوفية</li>
-            </ul>
-        </div>
+            <div class="service-card">
+                <i class="fas fa-passport"></i>
+                <h3>تحديث معلومات الجوازات</h3>
+                <ul>
+                    <li>تحديث معلومات للجنسيات: سوري، أفريقي، أفغاني، فلسطيني</li>
+                    <li>تعديل رقم وتاريخ الجواز</li>
+                    <li>معلومات عليه نهائي أو خارج المملكة</li>
+                </ul>
+            </div>
 
-        <div class="service-card">
-            <i class="fas fa-exchange-alt"></i>
-            <h3>نقل الكفالة والمهن</h3>
-            <ul>
-                <li>نقل مهني مربوط / نقل تابع مربوط</li>
-                <li>نقل وتعديل فردي المهني</li>
-                <li>نقل بين الفروع</li>
-                <li>فصل تابع عادي</li>
-            </ul>
-        </div>
+            <div class="service-card">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>نقل الكفالة والمهن</h3>
+                <ul>
+                    <li>نقل مهني مربوط / نقل تابع مربوط</li>
+                    <li>نقل وتعديل فردي المهني</li>
+                    <li>نقل بين الفروع</li>
+                    <li>فصل تابع عادي</li>
+                </ul>
+            </div>
 
-        <div class="service-card">
-            <i class="fas fa-plane-departure"></i>
-            <h3>خدمات خارج المملكة (بوكالة)</h3>
-            <ul>
-                <li>تجديد وتمديد خروج وعودة (كفيل طفل/كبير)</li>
-                <li>تجديد سائق شاحنة (بالصور/بوكالة)</li>
-                <li>خدمات المتوفي (إصدار، تجديد، خروج نهائي)</li>
-                <li>أقل سعر في السوق</li>
-            </ul>
+            <div class="service-card">
+                <i class="fas fa-file-invoice"></i>
+                <h3>استخراج تأشيرات فردية</h3>
+                <ul>
+                    <li>للسعوديين حتى الثامن (للصغار عمر 21-24)</li>
+                    <li>للأجانب (الأول والثاني)</li>
+                    <li>الجنسيات: باكستان والهند وبنجلاديش</li>
+                    <li>باقي الجنسيات عدد مفتوح للثامن</li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-        <div class="service-card">
-            <i class="fas fa-file-invoice"></i>
-            <h3>تأشيرات فردية</h3>
-            <ul>
-                <li>استخراج تأشيرات للسعوديين حتى الثامن</li>
-                <li>استخراج للأجانب (الأول والثاني)</li>
-                <li>تجديد ابن مواطنة / زوجة مواطن</li>
-            </ul>
-        </div>
-    </div>
+    <section class="payment-banner">
+        <h2>نعمل بمبدأ الدفع بعد الإنجاز</h2>
+        <p>لضمان حقوقكم.. ثقة وإنجاز يفوق التوقعات</p>
+    </section>
+
+    <a href="https://wa.me/966532766744" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
     <footer>
-        <h3>مكتب أبو شجاع للتعقيب</h3>
-        <p>نخدمكم أينما كنتم بدقة وسرعة</p>
-        <div class="contact-info">
-            <a href="tel:0532766744"><i class="fas fa-phone"></i> 0532766744</a>
-            <a href="tel:0532504834"><i class="fas fa-phone"></i> 0532504834</a>
+        <div class="footer-logo">مكتب أبو شجاع</div>
+        <div class="footer-links">
+            <a href="#">الرئيسية</a> | 
+            <a href="#">خدماتنا</a> | 
+            <a href="#">الأسئلة الشائعة</a> | 
+            <a href="#">اتصل بنا</a>
         </div>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">&copy; 2024 جميع الحقوق محفوظة لمكتب أبو شجاع</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">&copy; 2026 جميع الحقوق محفوظة لمكتب أبو شجاع للتعقيب</p>
     </footer>
 
 </body>
